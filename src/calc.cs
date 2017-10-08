@@ -15,7 +15,14 @@ public class GladeApp
  
 		Glade.XML gxml = new Glade.XML (null, "calc.glade", "calcWindow", null);
 		gxml.Autoconnect (this);
+
+		entry.Text = "0";
+
 		Application.Run();
 	}
+
+	[Glade.Widget]
+	Entry entry;
+
 }
 
