@@ -63,6 +63,8 @@ public class GladeApp
 		bplus.Clicked += OnPressOpButtonEvent;
 		bsub.Clicked += OnPressOpButtonEvent;
 		beq.Clicked += OnPressOpButtonEvent;
+		bmul.Clicked += OnPressOpButtonEvent;
+		bdiv.Clicked += OnPressOpButtonEvent;
 
 		Application.Run();
 	}
@@ -97,6 +99,15 @@ public class GladeApp
 		case MathOperand.Add:
 			result = lval + rval;
 			break;
+		case MathOperand.Substract:
+			result = lval - rval;
+			break;
+		case MathOperand.Multiply:
+			result = lval * rval;
+			break;
+		case MathOperand.Divide:
+			result = lval / rval;
+			break;
 		default:
 			break;
 		}
@@ -122,6 +133,12 @@ public class GladeApp
 		case "-":
 			currOperand = MathOperand.Substract;
 			break;
+		case "x":
+			currOperand = MathOperand.Multiply;
+			break;
+		case "/":
+			currOperand = MathOperand.Divide;
+			break;
 		case "=":
 			Calculate();
 			break;
@@ -135,7 +152,5 @@ public class GladeApp
 		} else
 			currArgument = MathArgument.Right;
 	}
-
-
 }
 
